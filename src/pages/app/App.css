@@ -52,3 +52,8 @@
   border-radius: 4px;
   margin-top: 50px;
 }
+.count {
+  width: 68px;
+  line-height: 21px;
+  text-align: center;
+}

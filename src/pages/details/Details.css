@@ -1,5 +1,5 @@
 .details {
-  padding: 30px 20px 0;
+  padding: 30px 25px 0;
 }
 .ok {
   width: 90px;
@@ -37,6 +37,11 @@
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  user-select: none;
+}
+.ol {
+  padding-left: 25px;
+  margin: 0;
 }
 .title {
   font-size: 22px;
@@ -51,6 +56,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  user-select: none;
 }
 .qrcode {
   display: flex;
