@@ -1,9 +1,8 @@
-import './Details.css';
+import './Details.css'
 import ok from '../../assets/images/ok.png'
 import qrcode from '../../assets/images/qrcode.png'
 function Details() {
   const code = sessionStorage.getItem('code')
-  console.log(22, code)
   return (
     <div className="details">
       <div className="header">
@@ -33,4 +32,4 @@ function Details() {
   )
 }
 
-export default Details;
+export default Details

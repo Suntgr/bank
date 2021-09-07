@@ -6,7 +6,7 @@ import axios from 'axios'
 import Toast from '../../components/toast'
 import Loading from '../../components/loading'
 
-const COUNTDOWN_SECONDS = 5
+const COUNTDOWN_SECONDS = 60
 
 function App() {
   let history = useHistory()
@@ -48,16 +48,21 @@ function App() {
   const submit = () => {
     if (state.number.length !== 12) {
       return Toast.info('兑换券号码有误')
-    } 
+    }
     Loading.show()
     axios({
       url: 'https://gf.ilinkmore.com/arabica/updateCouponCode',
       method: 'post',
       data: { ticket: state.number, phone: state.phone, code: state.code },
     })
-      .then(() => {
-        sessionStorage.setItem('code', 22)
-        history.push('/details')
+      .then(({ data }) => {
+        console.log(data)
+        if (+data.code === 200) {
+          sessionStorage.setItem('code', data.response.ticket)
+          history.push('/details')
+        } else {
+          Toast.info(data.message)
+        }
       })
       .catch((err) => {
         console.log(1111, err)
