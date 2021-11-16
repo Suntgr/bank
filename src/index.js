@@ -8,7 +8,7 @@ import PrivateRoute from './pages/PrivateRoute'
 import { HashRouter, Switch, Route } from 'react-router-dom'
 
 ReactDOM.render(
-  <HashRouter basename="/CGB">
+  <HashRouter basename="/cgb">
     <React.StrictMode>
       <Switch>
         <Route exact path="/" component={App}></Route>

@@ -58,7 +58,7 @@ function App() {
       .then(({ data }) => {
         console.log(data)
         if (+data.code === 200) {
-          sessionStorage.setItem('code', data.response.ticket)
+          sessionStorage.setItem('code', JSON.stringify(data.response.ticket))
           history.push('/details')
         } else {
           Toast.info(data.message)

@@ -2,7 +2,7 @@ import './Details.css'
 import ok from '../../assets/images/ok.png'
 import qrcode from '../../assets/images/qrcode.png'
 function Details() {
-  const code = sessionStorage.getItem('code')
+  const codes = JSON.parse(sessionStorage.getItem('code'))
   return (
     <div className="details">
       <div className="header">
@@ -11,13 +11,16 @@ function Details() {
         <span className="tip">建议截屏保存本页面至手机相册</span>
         <div className="line"></div>
         <div className="code">
-          <span className="code-name">兑换码</span>
-          <span className="code-val">{code}</span>
+          <span className="code-name">长按可复制兑换码</span>
+          {codes.map((code) => (
+            <span className="code-val">{code}</span>
+          ))}
         </div>
       </div>
       <div className="article">
-        <span className="title">兑换方式</span>
+        <span className="title">使用说明</span>
         <ol className="ol">
+          <li className="text">兑换码有效期30天，请尽快使用；</li>
           <li className="text">复制咖啡券兑换码；</li>
           <li className="text">微信小程序搜索“ARABICA”；</li>
           <li className="text">打开并授权登录；</li>
