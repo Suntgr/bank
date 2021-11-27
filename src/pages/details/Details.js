@@ -10,10 +10,16 @@ function Details() {
         <div className="success">兑换成功</div>
         <span className="tip">建议截屏保存本页面至手机相册</span>
         <div className="line"></div>
+        <div className="code-name">长按可复制兑换码</div>
+        {codes.length > 1 && (
+          <div className="code-name-tip">每个码请分别操作兑换</div>
+        )}
+
         <div className="code">
-          <span className="code-name">长按可复制兑换码</span>
           {codes.map((code) => (
-            <span className="code-val">{code}</span>
+            <span key={code} className="code-val">
+              {code}
+            </span>
           ))}
         </div>
       </div>
